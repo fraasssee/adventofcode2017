@@ -8,4 +8,7 @@ require_relative './adjacent_memory'
 memory = Memory.new($stdout)
 memory.find_point(ARGV)
 
+#task 2
+adjacent_memory = AdjacentMemory.new($stdout)
+adjacent_memory.find_point(ARGV)
 exit(0)
