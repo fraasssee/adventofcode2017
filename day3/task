@@ -1,0 +1,10 @@
+#!/usr/bin/env ruby
+
+require_relative './memory'
+require_relative './adjacent_memory'
+
+#task 1
+memory = Memory.new($stdout)
+memory.find_point(ARGV)
+
+exit(0)
