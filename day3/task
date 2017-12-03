@@ -1,5 +1,6 @@
 #!/usr/bin/env ruby
-
+require 'json'
+require_relative 'helpers'
 require_relative './memory'
 require_relative './adjacent_memory'
 

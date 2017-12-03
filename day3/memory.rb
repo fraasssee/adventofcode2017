@@ -1,15 +1,7 @@
-require 'json'
-
-module Direction
-  UP = 0
-  RIGHT = 1
-  LEFT = 2
-  DOWN = 3
-end
-
 class Memory
-  Point = Struct.new(:x, :y, :value)
+  include Helpers
 
+  Point = Struct.new(:x, :y, :value)
 
   def initialize(logger)
     @logger = logger
@@ -41,32 +33,6 @@ class Memory
       diff = goal - point.value
       point.value = goal
       move(direction, point, diff)
-    end
-  end
-
-  def next_direction(direction)
-    case direction
-    when Direction::UP
-      Direction::LEFT
-    when Direction::LEFT
-      Direction::DOWN
-    when Direction::RIGHT
-      Direction::UP
-    when Direction::DOWN
-      Direction::RIGHT
-    end
-  end
-
-  def move(direction, point, steps)
-    case direction
-    when Direction::UP
-      point.x += steps
-    when Direction::LEFT
-      point.y -= steps
-    when Direction::RIGHT
-      point.y += steps
-    when Direction::DOWN
-      point.x -= steps
     end
   end
 end
